@@ -1,11 +1,9 @@
 package MyСollections;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class Parser {
     ArrayList<String> parser(File file) {
@@ -18,46 +16,35 @@ public class Parser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return lines;
+        ArrayList<String> words = new ArrayList<>();
+        for (String line : lines) {
+            words.addAll(Arrays.asList(line.split("[^а-яА-Я]+")));
+        }
+        return words;
     }
-
     public static void main(String[] args) {
     //Определяем количество вхождений
         System.out.println();
-        System.out.println("Пример определение количество вхождений:");
         System.out.println("----------------------------------------------------------");
+        System.out.println("Пример определение количество вхождений:");
+
+        String RegEx = "^[Сс]трада(.*)";
 
         File file = new File("voyna.txt");
         Parser parser = new Parser();
-
         ArrayList<String> lines = parser.parser(file);
+        Pattern pattern = Pattern.compile(RegEx);
+        ArrayList<String> Words = new ArrayList<>();
 
-        int count = 0;
-        String suffering = "страдание";
         for (String line : lines) {
-            if (line.contains(suffering)) {
-                count += 1;
+            if (pattern.matcher(line).find()) {
+                Words.add(line);
             }
         }
-        System.out.println("Слово - " + suffering + " , входит " + count + " раз(a).");
-        System.out.println("----------------------------------------------------------");
-
-    //Определяем количество вхождений через класс Scanner:
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите слово: ");
-
-        String word = scanner.nextLine();
-        int count1 = 0;
-        for (String line1 : lines) {
-            if (line1.contains(word)) {
-                count1 += 1;
-            }
-        }
-        scanner.close();
-        System.out.println("Слово - " + word + " , содержится в тексте  " + count1 + " раз(a).");
-        System.out.println("----------------------------------------------------------");
+        System.out.println("Кол-во слов однокоренных слову - Страдание, входит "+ Words.size()+" раз(а)");
 
     //Пример таблицы умножения через вложенный цикл:
+        System.out.println("----------------------------------------------------------");
         System.out.println("Таблица умножения:");
         System.out.println();
         for (int i = 0; i < 10; i++) {
