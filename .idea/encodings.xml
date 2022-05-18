@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/src/MyArrayList/MyIterator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/MyLinkedList/MyLinked.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/MyСollections/Parser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/MyСollections/ScanParser.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/voyna.txt" charset="windows-1251" />
   </component>
 </project>
