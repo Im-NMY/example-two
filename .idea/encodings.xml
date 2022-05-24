@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Multithread/OneSecond.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/MyArrayList/MyArrayList.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/MyArrayList/MyInterface.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/MyArrayList/MyIterator.java" charset="UTF-8" />
